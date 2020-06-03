@@ -1,4 +1,23 @@
 module.exports = {
+  lintOnSave: false,
+  devServer: {
+    proxy: {
+      '/api': {
+        // 目标地址
+        target: 'http://localhost:3001',
+        // 是否进行跨域
+        changeOrigin: true,
+        // 路径重写
+        pathRewrite: { '^/api': '' }
+      },
+      '/wy': {
+        target: 'https://m.you.163.com',
+        changeOrigin: true,
+        // 路径重写
+        pathRewrite: { '^/wy': '' }
+      }
+    }
+  },
   css: {
     loaderOptions: {
       postcss: {

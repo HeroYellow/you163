@@ -19,7 +19,7 @@
           function() {
             FastClick.attach(document.body)
           },
-          false
+          { passive: false }
         )
       }
       if (!window.Promise) {
@@ -95,16 +95,16 @@
       )
 
       // 因为移动端全面阻止了默认事件，导致 input 无法获取焦点，input输入框绑定 touchstart 事件阻止传播即可
-      let inputs = document.querySelectorAll('input')
-      for (let i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener(
-          'touchstart',
-          function(ev) {
-            ev.stopPropagation()
-          },
-          { passive: false }
-        )
-      }
+      // let inputs = document.querySelectorAll('input')
+      // for (let i = 0; i < inputs.length; i++) {
+      //   inputs[i].addEventListener(
+      //     'touchstart',
+      //     function(ev) {
+      //       ev.stopPropagation()
+      //     },
+      //     { passive: false }
+      //   )
+      // }
     </script>
   </head>
   <body>

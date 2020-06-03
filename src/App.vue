@@ -22,8 +22,12 @@ export default {
 html, body
   width 100%
   height 100%
+  touch-action auto
+  background #eee
   #app
     position relative
     height 100%
-    overflow hidden
+    max-width 750px
+    margin 0 auto
+    // overflow hidden
 </style>

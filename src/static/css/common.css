@@ -1,0 +1,59 @@
+/* 轮播图 */
+.swipe {
+  width: 100%;
+  height: 296px;
+  overflow: hidden;
+}
+.swipe .van-swipe-item {
+  display: flex;
+  height: 296px;
+  align-items: center;
+}
+.swipe img {
+  width: 100%;
+}
+.swipe .van-swipe__indicator {
+  width: 0.53333rem;
+  height: 0.05333rem;
+  display: inline-block;
+  background: #fff;
+  opacity: 0.4;
+  border-radius: 0;
+  margin: 0 0.13333rem 0 0;
+}
+.swipe .van-swipe__indicator--active {
+  opacity: 1;
+}
+
+.swiper .swiper-container {
+  height: 100%;
+}
+
+.swiper .swiper-pagination-bullets {
+  bottom: 0.3rem;
+}
+
+.swiper .swiper-pagination-bullet {
+  margin: 0 !important;
+  width: 40px;
+  height: 4px;
+  border-radius: 0;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background-color: #dd1a21;
+}
+
+.van-list__loading {
+  margin: 0 auto;
+}
+
+/* 自定义滚动条 */
+.bscroll-vertical-scrollbar {
+  width: 6px !important;
+}
+
+.bscroll-indicator {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: none !important;
+}

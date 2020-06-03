@@ -1,23 +1,48 @@
 <template>
   <div class="tabBar-wrap">
-    <nav class="tabBar" @touchstart="cancelBubble">
-      <router-link class="item" to="/home/recommend" tag="div">
+    <nav class="tabBar">
+      <router-link
+        class="item"
+        to="/home"
+        tag="div"
+        :class="{ active: $route.path.startsWith('/home') }"
+      >
         <i class="icon-home"></i>
         <span>首页</span>
       </router-link>
-      <router-link class="item" to="/category" tag="div">
+      <router-link
+        class="item"
+        to="/category/catelist"
+        tag="div"
+        :class="{ active: $route.path.startsWith('/category') }"
+      >
         <i class="icon-category"></i>
         <span>分类</span>
       </router-link>
-      <router-link class="item" to="/buy" tag="div">
+      <router-link
+        class="item"
+        to="/buy"
+        tag="div"
+        :class="{ active: $route.path.startsWith('/buy') }"
+      >
         <i class="icon-buy"></i>
         <span>值得买</span>
       </router-link>
-      <router-link class="item" to="/cart" tag="div">
+      <router-link
+        class="item"
+        to="/cart"
+        tag="div"
+        :class="{ active: $route.path.startsWith('/cart') }"
+      >
         <i class="icon-cart"></i>
         <span>购物车</span>
       </router-link>
-      <router-link class="item" to="/person" tag="div">
+      <router-link
+        class="item"
+        to="/person"
+        tag="div"
+        :class="{ active: $route.path.startsWith('/person') }"
+      >
         <i class="icon-person"></i>
         <span>个人</span>
       </router-link>
@@ -27,13 +52,7 @@
 
 <script>
 export default {
-  name: 'tabBar',
-  methods: {
-    // TODO 因为全面阻止了默认事件，所以点击阻止传播即可
-    cancelBubble(e) {
-      e.stopPropagation()
-    }
-  }
+  name: 'tabBar'
 }
 </script>
 
@@ -41,9 +60,11 @@ export default {
 @import "../../static/stylus/mixins"
 .tabBar-wrap
   position fixed
+  z-index 2
   left 0
   bottom 0
   width 100%
+  background-color #fff
 
   .tabBar
     display flex
@@ -55,7 +76,7 @@ export default {
     .item
       text-align center
 
-      &.router-link-exact-active
+      &.active
 
         .icon-home
           background-position 0 -2.66667rem

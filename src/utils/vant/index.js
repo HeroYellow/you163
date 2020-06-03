@@ -7,9 +7,26 @@ import {
   Tabs,
   Icon,
   Swipe,
-  SwipeItem
+  SwipeItem,
+  List,
+  Cell,
+  CellGroup,
+  Search
 } from 'vant'
-let vantUIs = [Tabbar, TabbarItem, Button, Tab, Tabs, Icon, Swipe, SwipeItem]
+let vantUIs = [
+  Tabbar,
+  TabbarItem,
+  Button,
+  Tab,
+  Tabs,
+  Icon,
+  Swipe,
+  SwipeItem,
+  List,
+  Cell,
+  CellGroup,
+  Search
+]
 
 export default {
   install(Vue) {
