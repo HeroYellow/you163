@@ -28,9 +28,10 @@ export default {
 
 <style lang="stylus" scoped>
 .home-container
-  position absolute
-  top 0
-  left 0
-  right 0
-  bottom 1.30667rem
+  height 100%
+  // position absolute
+  // top 0
+  // left 0
+  // right 0
+  // bottom 1.30667rem
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="tabBar-wrap">
-    <nav class="tabBar">
+    <nav class="tabBar" @touchstart="cancelBubble">
       <router-link
         class="item"
         to="/home"
@@ -52,7 +52,12 @@
 
 <script>
 export default {
-  name: 'tabBar'
+  name: 'tabBar',
+  methods: {
+    cancelBubble(e) {
+      e.stopPropagation()
+    }
+  }
 }
 </script>
 
@@ -60,7 +65,7 @@ export default {
 @import "../../static/stylus/mixins"
 .tabBar-wrap
   position fixed
-  z-index 2
+  z-index 99
   left 0
   bottom 0
   width 100%

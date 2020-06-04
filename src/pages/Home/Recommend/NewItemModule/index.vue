@@ -16,11 +16,11 @@
                 <img :src="item.listPicUrl" alt />
               </div>
             </div>
-            <div class="name">{{item.name}}</div>
+            <div class="name">{{ item.name }}</div>
             <!-- <div class="newItemDesc">果香清新，一口难忘</div> -->
             <div class="price">
               <span class="priceInner">
-                <span>￥{{item.counterPrice}}</span>
+                <span>￥{{ item.counterPrice }}</span>
               </span>
             </div>
             <span></span>
@@ -201,7 +201,7 @@ export default {
 <style lang="stylus" scoped>
 .newItemModule
   background-color #fff
-  margin-bottom .26667rem
+  // margin-bottom .26667rem
   padding-bottom .34667rem
   .moduleTitle
     width 100%

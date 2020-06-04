@@ -24,8 +24,8 @@
 </template>
 
 <script>
-// ~ 引入better-scroll
-// import BScroll from 'better-scroll'
+// - 引入better-scroll
+import BScroll from 'better-scroll'
 // ~ 引入轮播图组件
 import Swipe from './Swipe'
 // ~ 引入ServicePolicy组件
@@ -60,17 +60,17 @@ export default {
     // FlashSaleModule,
     Footer
   },
-  // mounted() {
-  //   new BScroll(this.$refs.recommendContainer, {
-  //     scrollY: true,
-  //     click: true,
-  //     bounce: false,
-  //     scrollbar: {
-  //       fade: true,
-  //       interactive: false // 1.8.0 新增
-  //     }
-  //   })
-  // },
+  mounted() {
+    new BScroll(this.$refs.recommendContainer, {
+      scrollY: true,
+      click: true,
+      bounce: false,
+      scrollbar: {
+        fade: true,
+        interactive: false // 1.8.0 新增
+      }
+    })
+  },
   computed: {
     ...mapGetters([
       'focusList',
@@ -88,9 +88,11 @@ export default {
 <style lang="stylus" scoped>
 .recommend-container
   position: absolute
-  top: 148px
+  top: 0
   left: 0
   right: 0
+  bottom 0
   .recommend-content
+    padding-top: 148px
     padding-bottom 1.30667rem
 </style>

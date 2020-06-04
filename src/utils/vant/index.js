@@ -11,7 +11,8 @@ import {
   List,
   Cell,
   CellGroup,
-  Search
+  Search,
+  Popup
 } from 'vant'
 let vantUIs = [
   Tabbar,
@@ -25,7 +26,8 @@ let vantUIs = [
   List,
   Cell,
   CellGroup,
-  Search
+  Search,
+  Popup
 ]
 
 export default {
