@@ -15,7 +15,6 @@
                 class="ipt"
                 :placeholder="placeholder"
                 v-model.trim="keyword"
-                @touchstart="cancelBubble"
                 @keyup="search"
               />
             </div>
@@ -82,9 +81,6 @@ export default {
     this.getKeywords()
   },
   methods: {
-    cancelBubble(e) {
-      e.stopPropagation()
-    },
     async search() {
       if (!this.keyword) return
       await this.$store.dispatch('getWordList', this.keyword)

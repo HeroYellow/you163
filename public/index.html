@@ -86,13 +86,13 @@
     </script>
     <script>
       // 全面阻止默认事件
-      document.addEventListener(
-        'touchstart',
-        function(ev) {
-          ev.preventDefault()
-        },
-        { passive: false }
-      )
+      // document.addEventListener(
+      //   'touchstart',
+      //   function(ev) {
+      //     ev.preventDefault()
+      //   },
+      //   { passive: false }
+      // )
 
       // 因为移动端全面阻止了默认事件，导致 input 无法获取焦点，input输入框绑定 touchstart 事件阻止传播即可
       // let inputs = document.querySelectorAll('input')

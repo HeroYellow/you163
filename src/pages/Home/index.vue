@@ -15,8 +15,7 @@ export default {
     this.$store.dispatch('getIndexDatas')
   },
   methods: {
-    showMask(e) {
-      e.stopPropagation()
+    showMask() {
       this.$refs.header.isShowCate = false
     }
   },

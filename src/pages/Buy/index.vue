@@ -1,5 +1,5 @@
 <template>
-  <div class="buy-container" @touchstart="cancelBubble">
+  <div class="buy-container">
     <header class="header">
       <div class="topbar">
         <router-link to="/home" class="toHome">
@@ -128,9 +128,6 @@ export default {
     this.getRecAuto()
   },
   methods: {
-    cancelBubble(e) {
-      e.stopPropagation()
-    },
     toSearch() {
       this.$router.push('/search')
     },

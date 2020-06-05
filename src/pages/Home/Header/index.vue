@@ -14,13 +14,17 @@
       <nav class="nav-category" v-show="!isShowCate">
         <div class="nav-wrapper" ref="navCategory">
           <ul class="nav-content">
-            <router-link to="/home" tag="li" :class="{active: $route.path === '/home'}">
+            <router-link
+              to="/home"
+              tag="li"
+              :class="{ active: $route.path === '/home' }"
+            >
               <span>推荐</span>
             </router-link>
             <router-link
               to="/home/lifestyle"
               tag="li"
-              :class="{active: $route.path === '/home/lifestyle'}"
+              :class="{ active: $route.path === '/home/lifestyle' }"
             >
               <span>居家生活</span>
             </router-link>
@@ -51,7 +55,11 @@
       <div class="tabAlter" v-show="isShowCate">全部频道</div>
       <div class="toggleWrap">
         <div class="linear"></div>
-        <div class="toggle" @touchstart="showCate" :class="{ active: isShowCate ? true : false }">
+        <div
+          class="toggle"
+          @touchstart="showCate"
+          :class="{ active: isShowCate ? true : false }"
+        >
           <i></i>
         </div>
       </div>
@@ -60,12 +68,14 @@
           class="cateTag"
           data-category-name="/home"
           :class="{ active: $route.path === '/home' }"
-        >推荐</span>
+          >推荐</span
+        >
         <span
           class="cateTag"
           data-category-name="/home/lifestyle"
           :class="{ active: $route.path.startsWith('/home/lifestyle') }"
-        >居家生活</span>
+          >居家生活</span
+        >
         <span class="cateTag">服饰鞋包</span>
         <span class="cateTag">美食酒水</span>
         <span class="cateTag">个护清洁</span>

@@ -1,6 +1,6 @@
 <template>
   <div class="tabBar-wrap">
-    <nav class="tabBar" @touchstart="cancelBubble">
+    <nav class="tabBar">
       <router-link
         class="item"
         to="/home"
@@ -52,12 +52,7 @@
 
 <script>
 export default {
-  name: 'tabBar',
-  methods: {
-    cancelBubble(e) {
-      e.stopPropagation()
-    }
-  }
+  name: 'tabBar'
 }
 </script>
 
