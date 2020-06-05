@@ -26,9 +26,6 @@ export default {
   components: {
     CateNav
   }
-  // mounted() {
-  //   this.$store.dispatch('getCateList')
-  // }
 }
 </script>
 

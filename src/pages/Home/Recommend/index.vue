@@ -25,7 +25,7 @@
 
 <script>
 // - 引入better-scroll
-import BScroll from 'better-scroll'
+// import BScroll from 'better-scroll'
 // ~ 引入轮播图组件
 import Swipe from './Swipe'
 // ~ 引入ServicePolicy组件
@@ -61,15 +61,15 @@ export default {
     Footer
   },
   mounted() {
-    new BScroll(this.$refs.recommendContainer, {
-      scrollY: true,
-      click: true,
-      bounce: false,
-      scrollbar: {
-        fade: true,
-        interactive: false // 1.8.0 新增
-      }
-    })
+    // new BScroll(this.$refs.recommendContainer, {
+    //   scrollY: true,
+    //   click: true,
+    //   bounce: false,
+    //   scrollbar: {
+    //     fade: true,
+    //     interactive: false // 1.8.0 新增
+    //   }
+    // })
   },
   computed: {
     ...mapGetters([

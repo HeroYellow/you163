@@ -68,21 +68,6 @@ export default {
     })
   },
   methods: {
-    // TODO 初始化滑动
-    _initBScroll() {
-      const catelistHeight = this.$refs.catelistContainer.clientHeight
-      const subCateContentHeight = this.$refs.subCateContent.offsetHeight
-      this.$refs.subCateContainer.style.height =
-        (subCateContentHeight > catelistHeight
-          ? catelistHeight
-          : subCateContentHeight - 1) + 'px'
-      this.$nextTick(() => {
-        new BScroll(this.$refs.subCateContainer, {
-          scrollY: true,
-          click: true
-        })
-      })
-    },
     // TODO 获取右侧内容展示数据并初始化滚动
     getCateList() {
       // # 分发获取右侧数据的action
@@ -96,25 +81,24 @@ export default {
             item => this.$route.query.categoryId == item.id
           )
         }
-        // this.$nextTick(() => {
         // # 初始化滑动
-        // this._initBScroll()
         this.$nextTick(() => {
-          this.subCateContentHeight = this.$refs.subCateContent.offsetHeight
-          this.subCateContainerHeight =
-            this.subCateContentHeight > this.catelistHeight
-              ? this.catelistHeight
-              : this.subCateContentHeight - 1
-          this.$nextTick(() => {
-            this.$refs.subCateContainer.style.height =
-              this.subCateContainerHeight + 'px'
-            new BScroll(this.$refs.subCateContainer, {
-              scrollY: true,
-              click: true
+          if (this.$refs.subCateContent) {
+            this.subCateContentHeight = this.$refs.subCateContent.offsetHeight
+            this.subCateContainerHeight =
+              this.subCateContentHeight > this.catelistHeight
+                ? this.catelistHeight
+                : this.subCateContentHeight - 1
+            this.$nextTick(() => {
+              this.$refs.subCateContainer.style.height =
+                this.subCateContainerHeight + 'px'
+              new BScroll(this.$refs.subCateContainer, {
+                scrollY: true,
+                click: true
+              })
             })
-          })
+          }
         })
-        // })
       })
     }
   },

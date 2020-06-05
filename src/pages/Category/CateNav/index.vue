@@ -46,42 +46,28 @@ export default {
     this.getCateNavDatas()
   },
   methods: {
-    // TODO 初始化滑动
-    // _initBScroll() {
-    //   const cateNavHeight = this.$refs.cateNav.clientHeight
-    //   const cateNavVertContentHeight = this.$refs.cateNavVertContent
-    //     .offsetHeight
-    //   this.$refs.cateNavVert.style.height =
-    //     (cateNavVertContentHeight > cateNavHeight
-    //       ? cateNavHeight
-    //       : cateNavVertContentHeight - 1) + 'px'
-    //   this.$nextTick(() => {
-    //     new BScroll(this.$refs.cateNavVert, {
-    //       scrollY: true,
-    //       click: true
-    //     })
-    //   })
-    // },
     // TODO 获取左侧导航栏数据并初始化滚动
     getCateNavDatas() {
       // # 分发获取左侧导航栏数据的action
       const promise = this.$store.dispatch('getCateNavDatas')
       promise.then(() => {
         // # 初始化滑动
-        this.cateNavVertContentHeight = this.$refs.cateNavVertContent.offsetHeight
-        this.$nextTick(() => {
-          this.cateNavVertHeight =
-            this.cateNavVertContentHeight > this.cateNavHeight
-              ? this.cateNavHeight
-              : this.cateNavVertContentHeight - 1
-          this.$refs.cateNavVert.style.height = this.cateNavVertHeight + 'px'
+        if (this.$refs.cateNavVertContent) {
+          this.cateNavVertContentHeight = this.$refs.cateNavVertContent.offsetHeight
           this.$nextTick(() => {
-            new BScroll(this.$refs.cateNavVert, {
-              scrollY: true,
-              click: true
+            this.cateNavVertHeight =
+              this.cateNavVertContentHeight > this.cateNavHeight
+                ? this.cateNavHeight
+                : this.cateNavVertContentHeight - 1
+            this.$refs.cateNavVert.style.height = this.cateNavVertHeight + 'px'
+            this.$nextTick(() => {
+              new BScroll(this.$refs.cateNavVert, {
+                scrollY: true,
+                click: true
+              })
             })
           })
-        })
+        }
       })
     }
   }
